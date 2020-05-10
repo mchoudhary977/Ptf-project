@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Certificate(models.Model):
+    CertificateBadge = models.ImageField(upload_to='images/')
+    CertificateImage = models.ImageField(upload_to='images/')
+    Title = models.CharField(max_length=200)
+    CertificationDate = models.DateTimeField()
