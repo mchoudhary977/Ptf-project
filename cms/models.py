@@ -5,3 +5,6 @@ class Certificate(models.Model):
     CertificateImage = models.ImageField(upload_to='images/')
     Title = models.CharField(max_length=200)
     CertificationDate = models.DateTimeField()
+
+    def __str__(self):
+        return self.Title
