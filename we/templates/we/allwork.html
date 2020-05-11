@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center pt-3">Welcome to Mukesh's Work</h1>
+  <br />
+  <h2>Latest Posts</h2>
+  <hr />
+  {% for work in works.all %}
+    <a href="{% url 'workdetail' work.id %}"><h4>{{ work.ProjectTitle }}</h4></a>
+    {{ work.OraganizationName }}
+    {{ work.FromDate }} to {{ work.toDate}}
+    <br />
+    <img class="img-fluid" src="{{ work.ProjectLogo.url }}" height=200 width=200/>
+    <br />
+    <p>{{ work.Role }}</p>
+    <p>{{ work.Environments }}</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

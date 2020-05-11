@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center pt-3">{{ workdetail.ProjectTitle }}</h1>
+    <p class="text-center">{{ workdetail.FromDate }} To {{ workdetail.toDate }}</p>
+    <img class="img-fluid" src="{{ workdetail.ProjectLogo.url }}"/>
+    <p>{{ workdetail.OraganizationName }}</p>
+    <p>{{ workdetail.Client }}</p>
+    <p>{{ workdetail.Role }}</p>
+    <p>{{ workdetail.Environments }}</p>
+    <p>{{ workdetail.Description }}</p>
+    <p>{{ workdetail.Responsibilities }}</p>
+
+</div>
+
+{% endblock %}

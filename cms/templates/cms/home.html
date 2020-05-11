@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
+  {% load static %}
   <section class="jumbotron text-center">
     <div class="container">
       <h1>Hello People</h1>
@@ -9,37 +8,48 @@
       <p>
         <a href="mailto:mchoudhary977@gmail.com" class="btn btn-primary my-2">Email Me</a>
       </p>
+      <img src="{% static '23307.jpg' %}" height=300 />
     </div>
   </section>
 
   <div class="album py-5 bg-light">
     <div class="container">
-
+      <h3><a href="{% url 'allcerts' %}">Certification(s)</a></h3>
+      <hr />
       <div class="row">
         {% for cert in certificates.all %}
         <div class="col-md-4">
+          <a href="{% url 'certdetail' cert.id %}">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ cert.CertificateBadge.url }}"  />
+            <img class="card-img-top" src="{{ cert.CertificateBadge.url }}" height=300 width=200 />
             <div class="card-body">
               <p class="card-text">{{ cert.Title }}</p>
 
             </div>
           </div>
+          </a>
         </div>
         {% endfor %}
       </div>
 
+      <h3><a href="{% url 'allwork' %}">Work Experience(s)</a></h3>
+      <hr />
       <div class="row">
         {% for we in workexp.all %}
         <div class="col-md-4">
+          <!-- <a href="{% url 'workdetail' workdetail.id %" >WorkLink</a>-->
+
           <div class="card mb-4 shadow-sm">
+            <a href="{% url 'allwork' %}">
             <img class="card-img-top" src="{{ we.ProjectLogo.url }}"  />
             <div class="card-body">
               <p class="card-text">{{ we.ProjectTitle }}</p>
 
             </div>
           </div>
+
         </div>
+
         {% endfor %}
       </div>
 

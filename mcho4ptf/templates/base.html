@@ -1,17 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Album example · Bootstrap</title>
+  
+    <title>Mukesh Choudhary</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+		<!--Font-Awesome css-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -39,6 +45,48 @@
           font-size: 3.5rem;
         }
       }
+
+      			.fa {
+      			  padding: 5px;
+      			  font-size: 20px;
+      			  width: 30px;
+      			  text-align: center;
+      			  text-decoration: none;
+      			  margin: 5px 4px;
+      			}
+
+      			.fa:hover {
+      			    opacity: 0.95;
+      			}
+
+      			.fa-facebook {
+      			  background: #3B5998;
+      			  color: white;
+      			}
+
+      			.fa-twitter {
+      			  background: #55ACEE;
+      			  color: white;
+      			}
+
+      			.fa-google {
+      			  background: #dd4b39;
+      			  color: white;
+      			}
+
+      			.fa-linkedin {
+      			  background: #007bb5;
+      			  color: white;
+      			}
+      			.fa-skype {
+      			  background: #00aff0;
+      			  color: white;
+      			}
+
+      			.fa-rss {
+      			  background: #ff6600;
+      			  color: white;
+      			}
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
@@ -46,29 +94,42 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Mukesh Choudhary</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Mukesh Choudhary</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Certification</a>
+              <a class="nav-link" href="{% url 'allcerts' %}">Certification</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">WorkExperience</a>
+              <a class="nav-link" href="{% url 'allwork' %}">WorkExperience</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Resume</a>
+              <a class="nav-link" href="{% static 'Resume.pdf' %}" target="_blank">Resume</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="fa fa-linkedin" href="https://linkedin.com/in/mukesh-choudhary-9b033470/" target="_blank"></a>
+              <!--<a class="nav-link" href="{% static 'Resume.pdf' %}">LinkedIn</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-twitter" href="https://twitter.com/mchoudhary977" target="_blank"></a>
+              <!--
+              <a class="nav-link" href="{% static 'Resume.pdf' %}">Twitter</a>
+            -->
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-facebook" href="https://www.facebook.com/mukesh.choudhary.39750121/" target="_blank"></a>
+              <!--
+              <a class="nav-link" href="{% static 'Resume.pdf' %}">Facebook</a>
+            -->
             </li>
           </ul>
         </div>

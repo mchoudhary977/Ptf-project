@@ -1,22 +1,13 @@
-{{ blog.Title}}
-
-
 {% extends 'base.html' %}
 
 {% block content %}
 <div class="container">
-  <h1 class="text-center pt-3">Welcome to Mukesh's Blog</h1>
-  <br />
-  <h2>Latest Posts</h2>
-  <hr />
-  {% for blog in blogs.all %}
-    <a href=""><h4>{{ blog.Title }}</h4></a>
-    {{ blog.pub_date_pretty }}
+    <h1 class="text-center pt-3">{{ blog.Title }}</h1>
+    <p class="text-center">{{ blog.PubDate }}</p>
+    <img class="img-fluid" src="{{ blog.Image.url }}"/>
     <br />
-    <img class="img-fluid" src="{{ blog.Image.url }}" height=200 width=200/>
     <br />
-    <p>{{ blog.summary }}</p>
-  {% endfor %}
+    <p>{{ blog.Body }}</p>
 </div>
 
 {% endblock %}

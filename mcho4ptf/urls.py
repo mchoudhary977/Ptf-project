@@ -18,9 +18,16 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 import cms.views
+import we.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',cms.views.home, name='home'),
     path('blog/',include('blog.urls')),
+    #Adding for cert details section (step-1)
+    path('cms/', include('cms.urls')),
+
+    #Adding for workexp details section (step-1)
+    path('we/', include('we.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

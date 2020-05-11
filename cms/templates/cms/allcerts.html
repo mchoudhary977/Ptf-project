@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center pt-3">Welcome to Mukesh's Certification</h1>
+  <br />
+  <h2>All Certificates</h2>
+  <hr />
+  {% for cert in certs.all %}
+    <a href="{% url 'certdetail' cert.id %}"><h4>{{ cert.Title }}</h4></a>
+    {{ cert.CertificationDate }}
+    <br />
+    <img class="img-fluid" src="{{ cert.CertificateBadge.url }}" height=100 width=100/>
+    <br />
+    <br />
+    <img class="img-fluid" src="{{ cert.CertificateImage.url }}" height=200 width=200/>
+    <br />
+  {% endfor %}
+</div>
+
+{% endblock %}
