@@ -82,12 +82,11 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'DATABASE',
-        'USER': 'USERNAME',
+        'USER': 'USER',
         'PASSWORD': '**********',
         'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -136,6 +135,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 try:
-    from .local_settings import *
+    from local_settings import *
 except ImportError:
     pass
